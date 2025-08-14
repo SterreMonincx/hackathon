@@ -6,6 +6,7 @@ interface Message {
   text: string;
   isUser: boolean;
   timestamp: Date;
+  isUnread?: boolean;
 }
 
 interface MessageBubbleProps {
@@ -63,6 +64,9 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({ message }) => {
             <p className="text-sm leading-relaxed whitespace-pre-wrap">
               {message.text}
             </p>
+            {!message.isUser && message.isUnread && (
+              <span className="absolute -left-2 top-1/2 -translate-y-1/2 w-2 h-2 bg-purple-500 rounded-full" />
+            )}
             <button
               onClick={handleCopy}
               className={`absolute top-2 right-2 p-1 rounded opacity-0 group-hover:opacity-100 transition-opacity hover:scale-110 transform ${

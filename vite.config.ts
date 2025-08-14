@@ -7,4 +7,13 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://aac34e6af4b7.ngrok-free.app',
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
 });

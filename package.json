@@ -5,12 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "api": "node server/index.mjs",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
     "lucide-react": "^0.344.0",
+    "openai": "^4.104.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

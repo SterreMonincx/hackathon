@@ -1,7 +1,11 @@
 import React from 'react';
 import { MessageSquare, Settings } from 'lucide-react';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  onOpenSettings?: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onOpenSettings }) => {
   return (
     <header className="h-15 bg-white border-b border-purple-100 flex items-center justify-between px-6 shadow-sm">
       <div className="flex items-center space-x-3">
@@ -13,7 +17,7 @@ const Header: React.FC = () => {
           <p className="text-sm text-purple-600">Ask me about your messages</p>
         </div>
       </div>
-      <button className="p-2 hover:bg-purple-50 rounded-lg transition-colors">
+      <button className="p-2 hover:bg-purple-50 rounded-lg transition-colors" onClick={onOpenSettings}>
         <Settings className="w-5 h-5 text-gray-600" />
       </button>
     </header>
